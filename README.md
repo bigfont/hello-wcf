@@ -26,16 +26,13 @@ Open helloWCF.sln in Visual Studio.
 * Message exchange patterns (MEPS) include Request/Reply, OneWay, and Duplex. 
 * FaultExceptions enable services to inform clients about exceptions. 
 * Message protection levels include Signed, Signed and Encrypted, and Neither Signed nor Encrypted. 
+* Services pass serialized copies of objects not object references. The serialization is generally in SOAP. 
+* Prefer interfaces for service contracts instead of classes unless you want speed & simplicity. 
+* Use data contracts to enhance interoperability. 
+* Even void operations in a request/reply pattern block until they receive a response. 
+* Explicity set the `Name` and `Namespace` properties of all supporting contract attributes (e.g. `ServiceContract`) to avoid naming collisions. 
 
-Services pass serialized copies of objects not object references. The serialization is generally in SOAP. 
-
-Prefer interfaces for service contracts instead of classes unless you want speed & simplicity. 
-
-Use data contracts to enhance interoperability. 
-
-Even void operations in a request/reply pattern block until they receive a response. 
-
-Explicity set the `Name` and `Namespace` properties of all supporting contract attributes (e.g. `ServiceContract`) to avoid naming collisions. 
+# WCF Configuration
 
 The configuration goes into the hosts app.config file (or web.config) not the service libraries app.config file. The client element is only necessary if we are consuming a service.
 
@@ -55,6 +52,8 @@ The configuration goes into the hosts app.config file (or web.config) not the se
         add
       serviceHostingEnvironment
 
+# WCF Hosting
+
 There are four main ways to host a WCF Service: 
 
 1. Self Hosted (e.g. Console App)
@@ -62,6 +61,6 @@ There are four main ways to host a WCF Service:
 3. Internet Information Services
 4. Windows Process Activation
 
-# Helpful Links
+# Helpful Link
 
 [Basic Programming Lifecycle](https://msdn.microsoft.com/en-us/library/ms732098%28v=vs.110%29.aspx)
