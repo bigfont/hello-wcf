@@ -9,7 +9,7 @@ Open helloWCF.sln in Visual Studio.
 * Right click on `MyClient.ConsoleApp` 
 * Choose Debug > Start new Instance.
 
-**Run the WCF Service via IIS* 
+**Run the WCF Service via IIS**
 * Right click on `MyIISHost.ServiceApplication` 
 * Choose Debug > Start new Instance. 
 * Click on Service1.svc in the web browser to view the service help page. 
